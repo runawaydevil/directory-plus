@@ -1,0 +1,38 @@
+{{!< default}}
+
+{{#post}}
+    <article class="content-post {{post_class}}">
+        <header class="content-header">
+            <p class="content-kicker">Entrada</p>
+            <h1>{{title}}</h1>
+
+            {{#if custom_excerpt}}
+                <p class="content-dek">{{custom_excerpt}}</p>
+            {{/if}}
+
+            <div class="content-meta page-meta">
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+                <span>{{reading_time}}</span>
+                {{#if primary_tag}}
+                    <span>{{primary_tag.name}}</span>
+                {{/if}}
+                {{#if authors}}
+                    <span>{{authors separator=" · "}}</span>
+                {{/if}}
+            </div>
+        </header>
+
+        {{#if feature_image}}
+            <figure class="content-figure">
+                <img src="{{img_url feature_image size="xl"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
+                {{#if feature_image_caption}}
+                    <figcaption>{{feature_image_caption}}</figcaption>
+                {{/if}}
+            </figure>
+        {{/if}}
+
+        <div class="content-body">
+            {{content}}
+        </div>
+    </article>
+{{/post}}

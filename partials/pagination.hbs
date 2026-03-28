@@ -1,0 +1,15 @@
+<nav class="pagination" role="navigation">
+    {{#if prev}}
+        <a class="pagination-link" href="{{page_url prev}}">&larr; Mais novas</a>
+    {{else}}
+        <span></span>
+    {{/if}}
+
+    <span>Página {{page}} de {{pages}}</span>
+
+    {{#if next}}
+        <a class="pagination-link" href="{{page_url next}}">Mais antigas &rarr;</a>
+    {{else}}
+        <span></span>
+    {{/if}}
+</nav>

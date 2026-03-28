@@ -1,0 +1,21 @@
+{{!< default}}
+
+<header class="page-hero">
+    <p class="section-kicker">Arquivo</p>
+    <h1>{{meta_title}}</h1>
+    {{#if @site.description}}
+        <p>{{@site.description}}</p>
+    {{/if}}
+</header>
+
+<section class="section">
+    <div class="section-heading">
+        <div>
+            <p class="section-kicker">Arquivo</p>
+            <h2>Todos os posts</h2>
+        </div>
+        <p>Uma listagem editorial com cara de índice impresso, mas pronta para web e Ghost.</p>
+    </div>
+
+    {{> "directory-feed"}}
+</section>

@@ -1,0 +1,23 @@
+<footer class="site-footer">
+    <div class="footer-grid">
+        <section>
+            <p class="footer-label">Directory Plus</p>
+            <p class="footer-copy">&copy; {{date format="YYYY"}} {{@site.title}}.</p>
+            <p class="footer-copy">Tema em preto e branco para páginas, catálogos e diretórios com visual retrô.</p>
+        </section>
+
+        <section>
+            <p class="footer-label">Redes e atalhos</p>
+            {{navigation type="secondary"}}
+
+            <div class="footer-social-system">
+                {{#if @site.facebook}}
+                    <a href="{{social_url type="facebook"}}" target="_blank" rel="noopener noreferrer">Facebook</a>
+                {{/if}}
+                {{#if @site.twitter}}
+                    <a href="{{social_url type="twitter"}}" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+                {{/if}}
+            </div>
+        </section>
+    </div>
+</footer>

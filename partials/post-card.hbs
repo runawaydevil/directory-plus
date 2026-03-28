@@ -1,0 +1,23 @@
+<article class="entry-card {{post_class}}">
+    <span class="entry-number">{{@number}}</span>
+
+    <div class="entry-main">
+        <h3 class="entry-title"><a href="{{url}}">{{title}}</a></h3>
+
+        {{#if custom_excerpt}}
+            <p class="entry-summary">{{custom_excerpt}}</p>
+        {{else}}
+            <p class="entry-summary">{{excerpt words="22"}}</p>
+        {{/if}}
+    </div>
+
+    <div class="entry-aside">
+        {{#if primary_tag}}
+            <span>{{primary_tag.name}}</span>
+        {{/if}}
+        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+        {{#if primary_author}}
+            <span>{{primary_author.name}}</span>
+        {{/if}}
+    </div>
+</article>

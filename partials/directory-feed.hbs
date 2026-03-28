@@ -1,0 +1,11 @@
+{{#if posts}}
+    <div class="directory-list">
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+    </div>
+
+    {{pagination}}
+{{else}}
+    <p class="empty-state">Nenhuma entrada publicada ainda. Assim que você criar posts no Ghost, eles aparecem aqui no diretório.</p>
+{{/if}}

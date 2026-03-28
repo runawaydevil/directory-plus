@@ -1,0 +1,23 @@
+{{!< default}}
+
+{{#tag}}
+    <header class="page-hero">
+        <p class="section-kicker">Tag</p>
+        <h1>{{name}}</h1>
+        {{#if description}}
+            <p>{{description}}</p>
+        {{/if}}
+    </header>
+{{/tag}}
+
+<section class="section">
+    <div class="section-heading">
+        <div>
+            <p class="section-kicker">Coleção</p>
+            <h2>Posts desta tag</h2>
+        </div>
+        <p>Um índice limpo para navegar pelo conteúdo agrupado por assunto.</p>
+    </div>
+
+    {{> "directory-feed"}}
+</section>
