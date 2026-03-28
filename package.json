@@ -26,6 +26,13 @@
   "config": {
     "card_assets": true,
     "posts_per_page": 8,
+    "custom": {
+      "hero_video_url": {
+        "type": "text",
+        "group": "homepage",
+        "description": "URL do video exibido no hero da home."
+      }
+    },
     "image_sizes": {
       "xxs": {
         "width": 30

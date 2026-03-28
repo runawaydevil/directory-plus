@@ -1,63 +1,30 @@
 {{!< default}}
 
-<section class="intro-board">
-    <div class="intro-copy">
-        <p class="section-kicker">Directory Index</p>
-        <h1>Arquivo, páginas e entradas em uma estrutura mais limpa.</h1>
+<section class="hero-stage">
+    <div class="hero-copy">
+        <p class="section-kicker">Directory Plus</p>
+        <h1>{{@site.title}}</h1>
         {{#if @site.description}}
-            <p class="intro-dek">{{@site.description}}</p>
+            <p class="hero-dek">{{@site.description}}</p>
         {{else}}
-            <p class="intro-dek">Um diretório editorial com presença retrô, fundo branco e leitura mais organizada para páginas fixas e publicações recentes.</p>
+            <p class="hero-dek">Um espaço limpo, branco e direto para centralizar páginas, vídeos e presença editorial com estética IBM.</p>
         {{/if}}
     </div>
 
-    <div class="intro-notes">
-        <div class="intro-note">
-            <span class="eyebrow">Leitura</span>
-            <p>Menos blocos repetidos, mais hierarquia entre navegação, páginas fixas e posts.</p>
-        </div>
-
-        <div class="intro-note">
-            <span class="eyebrow">Estrutura</span>
-            <p>As páginas aparecem como atalhos curtos e os posts entram como índice compacto logo abaixo.</p>
-        </div>
-    </div>
-</section>
-
-{{#get "pages" limit="6" order="title asc"}}
-    {{#if pages}}
-        <section class="section">
-            <div class="section-heading">
-                <div>
-                    <p class="section-kicker">Páginas</p>
-                    <h2>Atalhos fixos</h2>
+    <div class="hero-media">
+        {{#if @custom.hero_video_url}}
+            <video class="hero-video" autoplay muted loop playsinline poster="{{@site.cover_image}}">
+                <source src="{{@custom.hero_video_url}}">
+            </video>
+        {{else}}
+            {{#if @site.cover_image}}
+                <img class="hero-poster" src="{{@site.cover_image}}" alt="{{@site.title}}">
+            {{else}}
+                <div class="hero-placeholder">
+                    <span class="eyebrow">Hero Video</span>
+                    <p>Adicione a URL do video em Design &amp; branding do tema para preencher esta area.</p>
                 </div>
-            </div>
-
-            <div class="page-grid">
-                {{#foreach pages}}
-                    <article class="page-tile">
-                        <span class="page-index">{{@number}}</span>
-                        <h3><a href="{{url}}">{{title}}</a></h3>
-                        {{#if custom_excerpt}}
-                            <p>{{custom_excerpt}}</p>
-                        {{else}}
-                            <p>{{excerpt words="18"}}</p>
-                        {{/if}}
-                    </article>
-                {{/foreach}}
-            </div>
-        </section>
-    {{/if}}
-{{/get}}
-
-<section class="section">
-    <div class="section-heading">
-        <div>
-            <p class="section-kicker">Diretório</p>
-            <h2>Entradas recentes</h2>
-        </div>
+            {{/if}}
+        {{/if}}
     </div>
-
-    {{> "directory-feed"}}
 </section>

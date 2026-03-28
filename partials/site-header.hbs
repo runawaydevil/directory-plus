@@ -1,7 +1,7 @@
 <header class="site-header">
-    <div class="header-frame">
-        <a class="brand" href="{{@site.url}}">
-            <span class="brand-mark">
+    <div class="topbar">
+        <a class="brandline" href="{{@site.url}}">
+            <span class="brandline-mark">
                 {{#if @site.logo}}
                     <img src="{{@site.logo}}" alt="{{@site.title}}">
                 {{else}}
@@ -13,25 +13,23 @@
                 {{/if}}
             </span>
 
-            <span class="brand-copy">
-                <span class="brand-kicker">Retro Link Directory</span>
-                <span class="brand-title">{{@site.title}}</span>
-                {{#if @site.description}}
-                    <span class="brand-description">{{@site.description}}</span>
-                {{/if}}
+            <span class="brandline-copy">
+                <span class="brandline-kicker">Directory Plus</span>
+                <span class="brandline-title">{{@site.title}}</span>
             </span>
         </a>
 
-        <div class="header-tools">
-            {{#if @site.cover_image}}
-                <div class="header-cover">
-                    <img src="{{@site.cover_image}}" alt="{{@site.title}}">
-                </div>
-            {{/if}}
-
-            <div class="header-nav-block">
-                {{navigation}}
-            </div>
-        </div>
+        <nav class="page-navbar" aria-label="Paginas do site">
+            <ul class="page-nav-list">
+                {{#get "pages" filter="visibility:public" limit="50" order="title asc"}}
+                    {{#foreach pages}}
+                        <li class="page-nav-item">
+                            <a href="{{url}}">{{title}}</a>
+                        </li>
+                    {{/foreach}}
+                {{/get}}
+            </ul>
+        </nav>
     </div>
 </header>
+
